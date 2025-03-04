@@ -70,7 +70,3 @@ class TasteProfile:
             'top_genres': top_genres
         }
         self.profile = taste_profile
-
-
-user_profile = TasteProfile()
-print(user_profile.profile)
