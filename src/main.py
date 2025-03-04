@@ -1,3 +1,6 @@
+"""
+Main interface module
+"""
 import os
 import config
 from openai import OpenAI

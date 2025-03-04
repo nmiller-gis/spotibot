@@ -1,19 +1,7 @@
-import os
-
-import spotipy
-from spotipy import SpotifyOAuth
-
-
-scope = 'user-library-read, user-top-read'
-
-spotify_client = spotipy.Spotify(
-    auth_manager=SpotifyOAuth(
-        scope=scope,
-        client_id=os.getenv("SPOTIFY_CLIENT_ID"),
-        client_secret=os.getenv("SPOTIFY_CLIENT_SECRET"),
-        redirect_uri=os.getenv("SPOTIFY_URI")
-    )
-)
+"""
+Module for the Taste Profile class.
+"""
+from src.spotify.client import spotify_client
 
 
 class TasteProfile:
@@ -22,7 +10,7 @@ class TasteProfile:
     """
     def __init__(self):
         self.sp = spotify_client
-        self.profile = {}
+        self.profile_dict = {}
         self.get_taste_profile("medium_term", 50)
 
     def get_taste_profile(self, time_range: str, limit: int):
@@ -69,4 +57,4 @@ class TasteProfile:
             'top_tracks': top_tracks,
             'top_genres': top_genres
         }
-        self.profile = taste_profile
+        self.profile_dict = taste_profile
