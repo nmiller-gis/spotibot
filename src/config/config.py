@@ -15,3 +15,7 @@ The following json contains the user's taste profile.
 Tailor all your responses based on this profile.
 {user_taste_profile}
 """
+
+function_guidance = """
+You must populate all parameters for all functions called by the user, no exceptions.
+"""

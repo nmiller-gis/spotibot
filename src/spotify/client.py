@@ -6,7 +6,7 @@ import spotipy
 from spotipy import SpotifyOAuth
 
 
-scope = 'user-library-read, user-top-read'
+scope = 'user-library-read, user-top-read, playlist-modify-private'
 
 spotify_client = spotipy.Spotify(
     auth_manager=SpotifyOAuth(
